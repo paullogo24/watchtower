@@ -1,0 +1,11 @@
+{"device_id": "dev-001", "old_state": "up", "new_state": "down", "timestamp": "2026-05-17T17:52:27.148850", "reason": "2 consecutive failures", "latency_ms": null}
+{"device_id": "b7dc4fc9", "old_state": "unknown", "new_state": "up", "timestamp": "2026-05-17T17:53:44.691480", "reason": "Device is responding", "latency_ms": 0.18}
+{"device_id": "c1e8c38f", "old_state": "unknown", "new_state": "down", "timestamp": "2026-05-17T17:53:52.708177", "reason": "2 consecutive ping failures", "latency_ms": null}
+{"device_id": "9fdabc13", "old_state": "unknown", "new_state": "up", "timestamp": "2026-05-17T19:12:10.043159", "reason": "Device is responding", "latency_ms": 0.52}
+{"device_id": "1f73fa7d", "old_state": "unknown", "new_state": "degraded", "timestamp": "2026-05-17T19:12:10.210590", "reason": "High latency detected: 165.18ms (threshold: 50ms)", "latency_ms": 165.18}
+{"device_id": "29aa5914", "old_state": "unknown", "new_state": "up", "timestamp": "2026-05-17T19:56:16.655963", "reason": "Device is responding", "latency_ms": 0.15}
+{"device_id": "d1300d1d", "old_state": "unknown", "new_state": "degraded", "timestamp": "2026-05-17T19:56:16.873051", "reason": "High latency detected: 215.39ms (threshold: 50ms)", "latency_ms": 215.39}
+{"device_id": "c39b891f", "old_state": "unknown", "new_state": "down", "timestamp": "2026-05-17T19:56:42.232493", "reason": "2 consecutive ping failures", "latency_ms": null}
+{"device_id": "4e8cde45", "old_state": "unknown", "new_state": "up", "timestamp": "2026-05-17T19:58:05.337795", "reason": "Device is responding", "latency_ms": 0.11}
+{"device_id": "20068b5a", "old_state": "unknown", "new_state": "degraded", "timestamp": "2026-05-17T19:58:05.470821", "reason": "High latency detected: 132.25ms (threshold: 50ms)", "latency_ms": 132.25}
+{"device_id": "5c36e303", "old_state": "unknown", "new_state": "down", "timestamp": "2026-05-17T19:58:30.675541", "reason": "2 consecutive ping failures", "latency_ms": null}
