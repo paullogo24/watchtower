@@ -108,27 +108,6 @@ def main():
             hostname="myphone",
             device_type="personaldevice",
             location="External"
-        ),
-        Device(
-            name="Caleb's Phone",
-            ip_address="10.25.107.222",
-            hostname="caleb",
-            device_type="personaldevice",
-            location="IC"
-        ),
-        Device(
-            name="Nkema's phone",
-            ip_address="10.235.194.217",
-            hostname="nkema",
-            device_type="personaldevice",
-            location="IC"
-        ),
-        Device(
-            name="Sessy's phone",
-            ip_address="192.168.1.125",
-            hostname="sessy",
-            device_type="personaldevice",
-            location="IC"
         )
     ]
 
