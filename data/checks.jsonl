@@ -1,38 +1,267 @@
-{"device_id": "dev-001", "timestamp": "2026-05-17T17:52:00.672310", "success": true, "latency_ms": 45, "error_message": null, "attempt_number": 1}
-{"device_id": "dev-001", "timestamp": "2026-05-17T17:52:00.672718", "success": true, "latency_ms": 45, "error_message": null, "attempt_number": 1}
-{"device_id": "dev-001", "timestamp": "2026-05-17T17:52:00.672934", "success": true, "latency_ms": 45, "error_message": null, "attempt_number": 1}
-{"device_id": "dev-001", "timestamp": "2026-05-17T17:52:00.673107", "success": false, "latency_ms": null, "error_message": null, "attempt_number": 1}
-{"device_id": "dev-001", "timestamp": "2026-05-17T17:52:00.673270", "success": false, "latency_ms": null, "error_message": null, "attempt_number": 1}
-{"device_id": "dev-001", "timestamp": "2026-05-17T17:52:27.137080", "success": true, "latency_ms": 45, "error_message": null, "attempt_number": 1}
-{"device_id": "dev-001", "timestamp": "2026-05-17T17:52:27.147836", "success": true, "latency_ms": 45, "error_message": null, "attempt_number": 1}
-{"device_id": "dev-001", "timestamp": "2026-05-17T17:52:27.148100", "success": true, "latency_ms": 45, "error_message": null, "attempt_number": 1}
-{"device_id": "dev-001", "timestamp": "2026-05-17T17:52:27.148298", "success": false, "latency_ms": null, "error_message": null, "attempt_number": 1}
-{"device_id": "dev-001", "timestamp": "2026-05-17T17:52:27.148489", "success": false, "latency_ms": null, "error_message": null, "attempt_number": 1}
-{"device_id": "b7dc4fc9", "timestamp": "2026-05-17T17:53:44.682174", "success": true, "latency_ms": 0.18, "error_message": null, "attempt_number": 1}
-{"device_id": "c1e8c38f", "timestamp": "2026-05-17T17:53:47.703706", "success": false, "latency_ms": null, "error_message": "No response within 1.0s", "attempt_number": 2}
-{"device_id": "b7dc4fc9", "timestamp": "2026-05-17T17:53:48.704739", "success": true, "latency_ms": 0.11, "error_message": null, "attempt_number": 1}
-{"device_id": "c1e8c38f", "timestamp": "2026-05-17T17:53:52.707700", "success": false, "latency_ms": null, "error_message": "No response within 1.0s", "attempt_number": 2}
-{"device_id": "9fdabc13", "timestamp": "2026-05-17T19:12:10.042540", "success": true, "latency_ms": 0.52, "error_message": null, "attempt_number": 1}
-{"device_id": "1f73fa7d", "timestamp": "2026-05-17T19:12:10.210070", "success": true, "latency_ms": 165.18, "error_message": null, "attempt_number": 1}
-{"device_id": "29aa5914", "timestamp": "2026-05-17T19:56:16.655803", "success": true, "latency_ms": 0.15, "error_message": null, "attempt_number": 1}
-{"device_id": "d1300d1d", "timestamp": "2026-05-17T19:56:16.872915", "success": true, "latency_ms": 215.39, "error_message": null, "attempt_number": 1}
-{"device_id": "c39b891f", "timestamp": "2026-05-17T19:56:24.379360", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
-{"device_id": "29aa5914", "timestamp": "2026-05-17T19:56:27.380256", "success": true, "latency_ms": 0.1, "error_message": null, "attempt_number": 1}
-{"device_id": "d1300d1d", "timestamp": "2026-05-17T19:56:27.725862", "success": true, "latency_ms": 345.27, "error_message": null, "attempt_number": 1}
-{"device_id": "c39b891f", "timestamp": "2026-05-17T19:56:42.232322", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
-{"device_id": "29aa5914", "timestamp": "2026-05-17T19:56:43.233060", "success": true, "latency_ms": 0.1, "error_message": null, "attempt_number": 1}
-{"device_id": "d1300d1d", "timestamp": "2026-05-17T19:56:43.394180", "success": true, "latency_ms": 160.74, "error_message": null, "attempt_number": 1}
-{"device_id": "c39b891f", "timestamp": "2026-05-17T19:56:59.901534", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
-{"device_id": "29aa5914", "timestamp": "2026-05-17T19:57:00.903271", "success": true, "latency_ms": 0.11, "error_message": null, "attempt_number": 1}
-{"device_id": "d1300d1d", "timestamp": "2026-05-17T19:57:01.037697", "success": true, "latency_ms": 133.87, "error_message": null, "attempt_number": 1}
-{"device_id": "4e8cde45", "timestamp": "2026-05-17T19:58:05.337650", "success": true, "latency_ms": 0.11, "error_message": null, "attempt_number": 1}
-{"device_id": "20068b5a", "timestamp": "2026-05-17T19:58:05.470587", "success": true, "latency_ms": 132.25, "error_message": null, "attempt_number": 1}
-{"device_id": "5c36e303", "timestamp": "2026-05-17T19:58:12.977366", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
-{"device_id": "4e8cde45", "timestamp": "2026-05-17T19:58:15.978280", "success": true, "latency_ms": 0.11, "error_message": null, "attempt_number": 1}
-{"device_id": "20068b5a", "timestamp": "2026-05-17T19:58:16.168161", "success": true, "latency_ms": 189.48, "error_message": null, "attempt_number": 1}
-{"device_id": "5c36e303", "timestamp": "2026-05-17T19:58:30.675359", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
-{"device_id": "4e8cde45", "timestamp": "2026-05-17T19:58:31.676223", "success": true, "latency_ms": 0.1, "error_message": null, "attempt_number": 1}
-{"device_id": "20068b5a", "timestamp": "2026-05-17T19:58:31.964835", "success": true, "latency_ms": 288.27, "error_message": null, "attempt_number": 1}
-{"device_id": "5c36e303", "timestamp": "2026-05-17T19:58:48.472366", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
-{"device_id": "4e8cde45", "timestamp": "2026-05-17T19:58:49.472989", "success": true, "latency_ms": 0.09, "error_message": null, "attempt_number": 1}
-{"device_id": "20068b5a", "timestamp": "2026-05-17T19:58:49.595346", "success": true, "latency_ms": 121.99, "error_message": null, "attempt_number": 1}
+{"device_id": "11fe9cc7", "timestamp": "2026-06-02T08:16:41.063852", "success": true, "latency_ms": 0.24, "error_message": null, "attempt_number": 1}
+{"device_id": "ca1bbb34", "timestamp": "2026-06-02T08:16:42.355287", "success": true, "latency_ms": 1290.41, "error_message": null, "attempt_number": 1}
+{"device_id": "17a1f6db", "timestamp": "2026-06-02T08:16:49.864864", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "5706fd4e", "timestamp": "2026-06-02T08:16:50.196053", "success": true, "latency_ms": 329.92, "error_message": null, "attempt_number": 1}
+{"device_id": "fd51e09a", "timestamp": "2026-06-02T08:16:50.197918", "success": true, "latency_ms": 0.29, "error_message": null, "attempt_number": 1}
+{"device_id": "11fe9cc7", "timestamp": "2026-06-02T08:16:51.199932", "success": true, "latency_ms": 0.32, "error_message": null, "attempt_number": 1}
+{"device_id": "ca1bbb34", "timestamp": "2026-06-02T08:16:53.437531", "success": true, "latency_ms": 236.01, "error_message": null, "attempt_number": 1}
+{"device_id": "17a1f6db", "timestamp": "2026-06-02T08:17:07.948293", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "5706fd4e", "timestamp": "2026-06-02T08:17:14.455824", "success": true, "latency_ms": 1498.9, "error_message": null, "attempt_number": 3}
+{"device_id": "fd51e09a", "timestamp": "2026-06-02T08:17:14.457242", "success": true, "latency_ms": 0.29, "error_message": null, "attempt_number": 1}
+{"device_id": "11fe9cc7", "timestamp": "2026-06-02T08:17:15.458864", "success": true, "latency_ms": 0.35, "error_message": null, "attempt_number": 1}
+{"device_id": "ca1bbb34", "timestamp": "2026-06-02T08:17:16.880755", "success": true, "latency_ms": 1420.69, "error_message": null, "attempt_number": 1}
+{"device_id": "17a1f6db", "timestamp": "2026-06-02T08:17:26.391098", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "5706fd4e", "timestamp": "2026-06-02T08:17:28.511456", "success": true, "latency_ms": 1118.65, "error_message": null, "attempt_number": 1}
+{"device_id": "fd51e09a", "timestamp": "2026-06-02T08:17:28.512852", "success": true, "latency_ms": 0.32, "error_message": null, "attempt_number": 1}
+{"device_id": "11fe9cc7", "timestamp": "2026-06-02T08:17:28.514052", "success": true, "latency_ms": 0.25, "error_message": null, "attempt_number": 1}
+{"device_id": "ca1bbb34", "timestamp": "2026-06-02T08:17:28.655200", "success": true, "latency_ms": 140.06, "error_message": null, "attempt_number": 1}
+{"device_id": "8671c752", "timestamp": "2026-06-02T09:39:49.471902", "success": true, "latency_ms": 0.12, "error_message": null, "attempt_number": 1}
+{"device_id": "b33edc83", "timestamp": "2026-06-02T09:39:49.623851", "success": true, "latency_ms": 151.06, "error_message": null, "attempt_number": 1}
+{"device_id": "82e92a11", "timestamp": "2026-06-02T09:39:57.132462", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "06857612", "timestamp": "2026-06-02T09:39:57.254923", "success": true, "latency_ms": 121.35, "error_message": null, "attempt_number": 1}
+{"device_id": "39531065", "timestamp": "2026-06-02T09:40:04.763955", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "3e649b11", "timestamp": "2026-06-02T09:40:04.764506", "success": true, "latency_ms": 0.15, "error_message": null, "attempt_number": 1}
+{"device_id": "8671c752", "timestamp": "2026-06-02T09:40:05.766166", "success": true, "latency_ms": 0.35, "error_message": null, "attempt_number": 1}
+{"device_id": "b33edc83", "timestamp": "2026-06-02T09:40:06.004625", "success": true, "latency_ms": 237.29, "error_message": null, "attempt_number": 1}
+{"device_id": "82e92a11", "timestamp": "2026-06-02T09:40:15.512760", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "06857612", "timestamp": "2026-06-02T09:40:15.544730", "success": true, "latency_ms": 31.46, "error_message": null, "attempt_number": 1}
+{"device_id": "39531065", "timestamp": "2026-06-02T09:40:24.055039", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "3e649b11", "timestamp": "2026-06-02T09:40:24.057063", "success": true, "latency_ms": 0.32, "error_message": null, "attempt_number": 1}
+{"device_id": "8671c752", "timestamp": "2026-06-02T09:40:24.058300", "success": true, "latency_ms": 0.3, "error_message": null, "attempt_number": 1}
+{"device_id": "b33edc83", "timestamp": "2026-06-02T09:40:24.463858", "success": true, "latency_ms": 404.48, "error_message": null, "attempt_number": 1}
+{"device_id": "82e92a11", "timestamp": "2026-06-02T09:40:33.974249", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "06857612", "timestamp": "2026-06-02T09:40:34.062353", "success": true, "latency_ms": 87.04, "error_message": null, "attempt_number": 1}
+{"device_id": "39531065", "timestamp": "2026-06-02T09:40:42.571826", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "3e649b11", "timestamp": "2026-06-02T09:40:42.573373", "success": true, "latency_ms": 0.33, "error_message": null, "attempt_number": 1}
+{"device_id": "8671c752", "timestamp": "2026-06-02T09:40:42.574567", "success": true, "latency_ms": 0.25, "error_message": null, "attempt_number": 1}
+{"device_id": "b33edc83", "timestamp": "2026-06-02T09:40:42.915982", "success": true, "latency_ms": 340.45, "error_message": null, "attempt_number": 1}
+{"device_id": "95740414", "timestamp": "2026-06-03T16:51:23.527664", "success": true, "latency_ms": 0.47, "error_message": null, "attempt_number": 1}
+{"device_id": "21d498cc", "timestamp": "2026-06-03T16:51:23.550077", "success": true, "latency_ms": 21.34, "error_message": null, "attempt_number": 1}
+{"device_id": "9471f678", "timestamp": "2026-06-03T16:51:31.058870", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "03aa26a0", "timestamp": "2026-06-03T16:51:31.080792", "success": true, "latency_ms": 20.79, "error_message": null, "attempt_number": 1}
+{"device_id": "75dc0b14", "timestamp": "2026-06-03T16:51:38.590230", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "2d94c8c4", "timestamp": "2026-06-03T16:51:46.100373", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "95740414", "timestamp": "2026-06-03T16:51:47.102320", "success": true, "latency_ms": 0.32, "error_message": null, "attempt_number": 1}
+{"device_id": "21d498cc", "timestamp": "2026-06-03T16:51:47.123599", "success": true, "latency_ms": 20.28, "error_message": null, "attempt_number": 1}
+{"device_id": "9471f678", "timestamp": "2026-06-03T16:51:54.632528", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "03aa26a0", "timestamp": "2026-06-03T16:51:54.654983", "success": true, "latency_ms": 20.43, "error_message": null, "attempt_number": 1}
+{"device_id": "75dc0b14", "timestamp": "2026-06-03T16:52:03.164867", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "2d94c8c4", "timestamp": "2026-06-03T16:52:11.675752", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "95740414", "timestamp": "2026-06-03T16:52:11.677884", "success": true, "latency_ms": 0.32, "error_message": null, "attempt_number": 1}
+{"device_id": "21d498cc", "timestamp": "2026-06-03T16:52:11.702392", "success": true, "latency_ms": 23.65, "error_message": null, "attempt_number": 1}
+{"device_id": "cccd5454", "timestamp": "2026-06-03T17:01:49.135957", "success": true, "latency_ms": 0.3, "error_message": null, "attempt_number": 1}
+{"device_id": "2168e0a2", "timestamp": "2026-06-03T17:01:49.171176", "success": true, "latency_ms": 34.04, "error_message": null, "attempt_number": 1}
+{"device_id": "ba942b1e", "timestamp": "2026-06-03T17:01:56.679061", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "842e1727", "timestamp": "2026-06-03T17:01:56.713766", "success": true, "latency_ms": 33.78, "error_message": null, "attempt_number": 1}
+{"device_id": "3942ad39", "timestamp": "2026-06-03T17:02:04.221544", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "f91c6789", "timestamp": "2026-06-03T17:02:11.728417", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "1ebc76b7", "timestamp": "2026-06-03T17:02:11.729494", "success": true, "latency_ms": 0.26, "error_message": null, "attempt_number": 1}
+{"device_id": "cccd5454", "timestamp": "2026-06-03T17:02:12.730813", "success": true, "latency_ms": 0.18, "error_message": null, "attempt_number": 1}
+{"device_id": "2168e0a2", "timestamp": "2026-06-03T17:02:12.795493", "success": true, "latency_ms": 64.05, "error_message": null, "attempt_number": 1}
+{"device_id": "ba942b1e", "timestamp": "2026-06-03T17:02:20.304364", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "842e1727", "timestamp": "2026-06-03T17:02:20.358895", "success": true, "latency_ms": 53.51, "error_message": null, "attempt_number": 1}
+{"device_id": "3942ad39", "timestamp": "2026-06-03T17:02:28.867499", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "f91c6789", "timestamp": "2026-06-03T17:02:37.376493", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "1ebc76b7", "timestamp": "2026-06-03T17:02:37.377961", "success": true, "latency_ms": 0.23, "error_message": null, "attempt_number": 1}
+{"device_id": "cccd5454", "timestamp": "2026-06-03T17:02:37.378798", "success": true, "latency_ms": 0.19, "error_message": null, "attempt_number": 1}
+{"device_id": "2168e0a2", "timestamp": "2026-06-03T17:02:37.416576", "success": true, "latency_ms": 37.04, "error_message": null, "attempt_number": 1}
+{"device_id": "ea7fc20e", "timestamp": "2026-06-04T10:25:36.356975", "success": true, "latency_ms": 0.28, "error_message": null, "attempt_number": 1}
+{"device_id": "4db68834", "timestamp": "2026-06-04T10:25:36.379096", "success": true, "latency_ms": 19.7, "error_message": null, "attempt_number": 1}
+{"device_id": "1e3ad31c", "timestamp": "2026-06-04T10:25:43.886571", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "ea1862b1", "timestamp": "2026-06-04T10:25:43.903782", "success": true, "latency_ms": 16.56, "error_message": null, "attempt_number": 1}
+{"device_id": "dc35baf2", "timestamp": "2026-06-04T10:25:51.410619", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "128025e1", "timestamp": "2026-06-04T10:25:58.917626", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "859eb961", "timestamp": "2026-06-04T10:26:06.425599", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "284884e8", "timestamp": "2026-06-04T10:26:13.932594", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "ea7fc20e", "timestamp": "2026-06-04T10:26:14.933643", "success": true, "latency_ms": 0.15, "error_message": null, "attempt_number": 1}
+{"device_id": "4db68834", "timestamp": "2026-06-04T10:26:14.958437", "success": true, "latency_ms": 24.1, "error_message": null, "attempt_number": 1}
+{"device_id": "1e3ad31c", "timestamp": "2026-06-04T10:26:22.466732", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "ea1862b1", "timestamp": "2026-06-04T10:26:22.482609", "success": true, "latency_ms": 15.24, "error_message": null, "attempt_number": 1}
+{"device_id": "dc35baf2", "timestamp": "2026-06-04T10:26:29.989768", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "522e9159", "timestamp": "2026-06-08T10:58:31.712122", "success": true, "latency_ms": 0.45, "error_message": null, "attempt_number": 1}
+{"device_id": "678df603", "timestamp": "2026-06-08T10:58:34.703738", "success": true, "latency_ms": 20.15, "error_message": null, "attempt_number": 1}
+{"device_id": "b8b06955", "timestamp": "2026-06-08T10:58:44.798901", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "a043cc03", "timestamp": "2026-06-08T10:58:44.824446", "success": true, "latency_ms": 24.33, "error_message": null, "attempt_number": 1}
+{"device_id": "0a8ced3d", "timestamp": "2026-06-08T10:58:55.221494", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "e55f95fb", "timestamp": "2026-06-08T10:59:02.729697", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "379a398c", "timestamp": "2026-06-08T10:59:10.239698", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "c42565ee", "timestamp": "2026-06-08T10:59:17.748604", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "522e9159", "timestamp": "2026-06-08T10:59:18.750118", "success": true, "latency_ms": 0.33, "error_message": null, "attempt_number": 1}
+{"device_id": "678df603", "timestamp": "2026-06-08T10:59:18.773811", "success": true, "latency_ms": 22.39, "error_message": null, "attempt_number": 1}
+{"device_id": "b8b06955", "timestamp": "2026-06-08T10:59:26.280746", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "a043cc03", "timestamp": "2026-06-08T10:59:28.896722", "success": true, "latency_ms": 25.94, "error_message": null, "attempt_number": 1}
+{"device_id": "0a8ced3d", "timestamp": "2026-06-08T10:59:37.403481", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "e55f95fb", "timestamp": "2026-06-08T10:59:48.463487", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "379a398c", "timestamp": "2026-06-08T10:59:58.613616", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "c42565ee", "timestamp": "2026-06-08T11:00:10.047543", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "522e9159", "timestamp": "2026-06-08T11:00:12.310930", "success": true, "latency_ms": 0.3, "error_message": null, "attempt_number": 1}
+{"device_id": "678df603", "timestamp": "2026-06-08T11:00:12.332295", "success": true, "latency_ms": 20.42, "error_message": null, "attempt_number": 1}
+{"device_id": "b8b06955", "timestamp": "2026-06-08T11:00:19.840536", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "a043cc03", "timestamp": "2026-06-08T11:00:19.864136", "success": true, "latency_ms": 22.29, "error_message": null, "attempt_number": 1}
+{"device_id": "0a8ced3d", "timestamp": "2026-06-08T11:00:28.372544", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "e55f95fb", "timestamp": "2026-06-08T11:00:36.880598", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "379a398c", "timestamp": "2026-06-08T11:00:45.387562", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "c42565ee", "timestamp": "2026-06-08T11:00:53.896645", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "522e9159", "timestamp": "2026-06-08T11:00:53.897317", "success": true, "latency_ms": 0.15, "error_message": null, "attempt_number": 1}
+{"device_id": "678df603", "timestamp": "2026-06-08T11:00:53.919106", "success": true, "latency_ms": 21.38, "error_message": null, "attempt_number": 1}
+{"device_id": "b8b06955", "timestamp": "2026-06-08T11:01:02.426528", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "a043cc03", "timestamp": "2026-06-08T11:01:02.448236", "success": true, "latency_ms": 20.45, "error_message": null, "attempt_number": 1}
+{"device_id": "97eabdee", "timestamp": "2026-06-08T14:14:22.443547", "success": true, "latency_ms": 0.4, "error_message": null, "attempt_number": 1}
+{"device_id": "f76564f6", "timestamp": "2026-06-08T14:14:25.406174", "success": true, "latency_ms": 19.41, "error_message": null, "attempt_number": 1}
+{"device_id": "8b033188", "timestamp": "2026-06-08T14:14:35.135584", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "384180cb", "timestamp": "2026-06-08T14:14:35.145626", "success": true, "latency_ms": 9.62, "error_message": null, "attempt_number": 1}
+{"device_id": "35540493", "timestamp": "2026-06-08T14:14:44.814208", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "3ab4986f", "timestamp": "2026-06-08T14:14:52.321757", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "2590072e", "timestamp": "2026-06-08T14:14:59.829143", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "318656c7", "timestamp": "2026-06-08T14:15:07.335713", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "97eabdee", "timestamp": "2026-06-08T14:15:08.336387", "success": true, "latency_ms": 0.1, "error_message": null, "attempt_number": 1}
+{"device_id": "f76564f6", "timestamp": "2026-06-08T14:15:08.356113", "success": true, "latency_ms": 19.24, "error_message": null, "attempt_number": 1}
+{"device_id": "8b033188", "timestamp": "2026-06-08T14:15:15.862182", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "384180cb", "timestamp": "2026-06-08T14:15:18.089395", "success": true, "latency_ms": 9.76, "error_message": null, "attempt_number": 1}
+{"device_id": "35540493", "timestamp": "2026-06-08T14:15:26.595238", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "3ab4986f", "timestamp": "2026-06-08T14:15:38.447204", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "2590072e", "timestamp": "2026-06-08T14:15:49.180277", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "318656c7", "timestamp": "2026-06-08T14:16:00.046196", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "97eabdee", "timestamp": "2026-06-08T14:16:02.325108", "success": true, "latency_ms": 0.16, "error_message": null, "attempt_number": 1}
+{"device_id": "f76564f6", "timestamp": "2026-06-08T14:16:02.345019", "success": true, "latency_ms": 19.64, "error_message": null, "attempt_number": 1}
+{"device_id": "8b033188", "timestamp": "2026-06-08T14:16:09.851180", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "384180cb", "timestamp": "2026-06-08T14:16:09.863243", "success": true, "latency_ms": 11.54, "error_message": null, "attempt_number": 1}
+{"device_id": "35540493", "timestamp": "2026-06-08T14:16:18.369169", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "3ab4986f", "timestamp": "2026-06-08T14:16:26.876858", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "2590072e", "timestamp": "2026-06-08T14:16:35.387583", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "318656c7", "timestamp": "2026-06-08T14:16:43.896339", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "97eabdee", "timestamp": "2026-06-08T14:16:43.897317", "success": true, "latency_ms": 0.21, "error_message": null, "attempt_number": 1}
+{"device_id": "f76564f6", "timestamp": "2026-06-08T14:16:43.917170", "success": true, "latency_ms": 19.16, "error_message": null, "attempt_number": 1}
+{"device_id": "8b033188", "timestamp": "2026-06-08T14:16:52.424410", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "384180cb", "timestamp": "2026-06-08T14:16:52.438218", "success": true, "latency_ms": 12.44, "error_message": null, "attempt_number": 1}
+{"device_id": "ea9e9822", "timestamp": "2026-06-09T09:54:37.116908", "success": true, "latency_ms": 0.29, "error_message": null, "attempt_number": 1}
+{"device_id": "32bc5a86", "timestamp": "2026-06-09T09:54:40.164003", "success": true, "latency_ms": 19.99, "error_message": null, "attempt_number": 1}
+{"device_id": "fbaf8e18", "timestamp": "2026-06-09T09:54:50.118540", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "e694c423", "timestamp": "2026-06-09T09:54:50.129228", "success": true, "latency_ms": 10.16, "error_message": null, "attempt_number": 1}
+{"device_id": "ef697c3a", "timestamp": "2026-06-09T09:55:00.495574", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "04aaaa8e", "timestamp": "2026-06-09T09:55:08.002744", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "dbfce436", "timestamp": "2026-06-09T09:55:15.509527", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "9d90e53a", "timestamp": "2026-06-09T09:55:23.016556", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "ea9e9822", "timestamp": "2026-06-09T09:55:24.018403", "success": true, "latency_ms": 0.32, "error_message": null, "attempt_number": 1}
+{"device_id": "32bc5a86", "timestamp": "2026-06-09T09:55:24.038887", "success": true, "latency_ms": 19.47, "error_message": null, "attempt_number": 1}
+{"device_id": "fbaf8e18", "timestamp": "2026-06-09T09:55:31.545566", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "e694c423", "timestamp": "2026-06-09T09:55:34.227293", "success": true, "latency_ms": 10.61, "error_message": null, "attempt_number": 1}
+{"device_id": "ef697c3a", "timestamp": "2026-06-09T09:55:42.733544", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "04aaaa8e", "timestamp": "2026-06-09T09:55:53.930525", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "dbfce436", "timestamp": "2026-06-09T09:56:04.314785", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "9d90e53a", "timestamp": "2026-06-09T09:56:15.530832", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "ea9e9822", "timestamp": "2026-06-09T09:56:18.511624", "success": true, "latency_ms": 0.18, "error_message": null, "attempt_number": 1}
+{"device_id": "32bc5a86", "timestamp": "2026-06-09T09:56:18.531880", "success": true, "latency_ms": 19.57, "error_message": null, "attempt_number": 1}
+{"device_id": "fbaf8e18", "timestamp": "2026-06-09T09:56:26.041738", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "e694c423", "timestamp": "2026-06-09T09:56:26.055184", "success": true, "latency_ms": 12.04, "error_message": null, "attempt_number": 1}
+{"device_id": "ef697c3a", "timestamp": "2026-06-09T09:56:34.564869", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "04aaaa8e", "timestamp": "2026-06-09T09:56:42.074898", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "dbfce436", "timestamp": "2026-06-09T09:56:50.583728", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "9d90e53a", "timestamp": "2026-06-09T09:56:59.092915", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "ea9e9822", "timestamp": "2026-06-09T09:56:59.094541", "success": true, "latency_ms": 0.4, "error_message": null, "attempt_number": 1}
+{"device_id": "32bc5a86", "timestamp": "2026-06-09T09:56:59.116958", "success": true, "latency_ms": 21.19, "error_message": null, "attempt_number": 1}
+{"device_id": "fbaf8e18", "timestamp": "2026-06-09T09:57:07.626960", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "e694c423", "timestamp": "2026-06-09T09:57:07.638692", "success": true, "latency_ms": 10.2, "error_message": null, "attempt_number": 1}
+{"device_id": "ca2c93ba", "timestamp": "2026-06-20T21:37:29.609747", "success": true, "latency_ms": 0.43, "error_message": null, "attempt_number": 1}
+{"device_id": "77eb179e", "timestamp": "2026-06-20T21:37:33.615687", "success": true, "latency_ms": 21.14, "error_message": null, "attempt_number": 1}
+{"device_id": "30c6b06a", "timestamp": "2026-06-20T21:37:44.693897", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "6cf048c1", "timestamp": "2026-06-20T21:37:44.718363", "success": true, "latency_ms": 23.2, "error_message": null, "attempt_number": 1}
+{"device_id": "9f13b01a", "timestamp": "2026-06-20T21:37:55.192943", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "68700eab", "timestamp": "2026-06-20T21:38:02.701290", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "82166c5f", "timestamp": "2026-06-20T21:38:10.210023", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "8c0adfbe", "timestamp": "2026-06-20T21:38:17.718869", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "ca2c93ba", "timestamp": "2026-06-20T21:38:18.720723", "success": true, "latency_ms": 0.31, "error_message": null, "attempt_number": 1}
+{"device_id": "77eb179e", "timestamp": "2026-06-20T21:38:18.754733", "success": true, "latency_ms": 32.89, "error_message": null, "attempt_number": 1}
+{"device_id": "30c6b06a", "timestamp": "2026-06-20T21:38:26.262958", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "6cf048c1", "timestamp": "2026-06-20T21:38:29.427958", "success": true, "latency_ms": 29.86, "error_message": null, "attempt_number": 1}
+{"device_id": "9f13b01a", "timestamp": "2026-06-20T21:38:37.936985", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "68700eab", "timestamp": "2026-06-20T21:38:49.690869", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "82166c5f", "timestamp": "2026-06-20T21:39:00.353983", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "8c0adfbe", "timestamp": "2026-06-20T21:39:11.762165", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "ca2c93ba", "timestamp": "2026-06-20T21:39:14.885001", "success": true, "latency_ms": 0.34, "error_message": null, "attempt_number": 1}
+{"device_id": "77eb179e", "timestamp": "2026-06-20T21:39:14.931763", "success": true, "latency_ms": 45.7, "error_message": null, "attempt_number": 1}
+{"device_id": "30c6b06a", "timestamp": "2026-06-20T21:39:22.440875", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "6cf048c1", "timestamp": "2026-06-20T21:39:22.475673", "success": true, "latency_ms": 33.44, "error_message": null, "attempt_number": 1}
+{"device_id": "9f13b01a", "timestamp": "2026-06-20T21:39:30.984973", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "6eaaa8d9", "timestamp": "2026-07-02T14:45:29.068627", "success": true, "latency_ms": 0.5, "error_message": null, "attempt_number": 1}
+{"device_id": "5877d046", "timestamp": "2026-07-02T14:45:32.330857", "success": true, "latency_ms": 30.53, "error_message": null, "attempt_number": 1}
+{"device_id": "6bcafdd8", "timestamp": "2026-07-02T14:45:42.512336", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "9e72deb4", "timestamp": "2026-07-02T14:45:42.535167", "success": true, "latency_ms": 21.37, "error_message": null, "attempt_number": 1}
+{"device_id": "6e3f2013", "timestamp": "2026-07-02T14:45:52.509274", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "ec50643d", "timestamp": "2026-07-02T14:46:00.018417", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "63d54eb7", "timestamp": "2026-07-02T14:46:07.528012", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "b7de6a8f", "timestamp": "2026-07-02T14:46:15.037318", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "6eaaa8d9", "timestamp": "2026-07-02T14:46:16.038841", "success": true, "latency_ms": 0.33, "error_message": null, "attempt_number": 1}
+{"device_id": "5877d046", "timestamp": "2026-07-02T14:46:16.070161", "success": true, "latency_ms": 30.14, "error_message": null, "attempt_number": 1}
+{"device_id": "6bcafdd8", "timestamp": "2026-07-02T14:46:23.578220", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "9e72deb4", "timestamp": "2026-07-02T14:46:26.104267", "success": true, "latency_ms": 29.89, "error_message": null, "attempt_number": 1}
+{"device_id": "6e3f2013", "timestamp": "2026-07-02T14:46:34.612352", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "ec50643d", "timestamp": "2026-07-02T14:46:46.070337", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "63d54eb7", "timestamp": "2026-07-02T14:46:56.118327", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "b7de6a8f", "timestamp": "2026-07-02T14:47:08.583300", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "6eaaa8d9", "timestamp": "2026-07-02T14:47:11.447162", "success": true, "latency_ms": 0.33, "error_message": null, "attempt_number": 1}
+{"device_id": "5877d046", "timestamp": "2026-07-02T14:47:11.490278", "success": true, "latency_ms": 41.96, "error_message": null, "attempt_number": 1}
+{"device_id": "6bcafdd8", "timestamp": "2026-07-02T14:47:18.998831", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "9e72deb4", "timestamp": "2026-07-02T14:47:19.024171", "success": true, "latency_ms": 24.03, "error_message": null, "attempt_number": 1}
+{"device_id": "6e3f2013", "timestamp": "2026-07-02T14:47:27.533310", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "ec50643d", "timestamp": "2026-07-02T14:47:35.041228", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "63d54eb7", "timestamp": "2026-07-02T14:47:43.550328", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "b7de6a8f", "timestamp": "2026-07-02T14:47:52.059190", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "6eaaa8d9", "timestamp": "2026-07-02T14:47:52.059625", "success": true, "latency_ms": 0.09, "error_message": null, "attempt_number": 1}
+{"device_id": "5877d046", "timestamp": "2026-07-02T14:47:52.090973", "success": true, "latency_ms": 30.83, "error_message": null, "attempt_number": 1}
+{"device_id": "6bcafdd8", "timestamp": "2026-07-02T14:48:00.599241", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "9e72deb4", "timestamp": "2026-07-02T14:48:00.635684", "success": true, "latency_ms": 35.41, "error_message": null, "attempt_number": 1}
+{"device_id": "90f76713", "timestamp": "2026-07-02T14:57:06.620814", "success": true, "latency_ms": 0.44, "error_message": null, "attempt_number": 1}
+{"device_id": "cdcb60c1", "timestamp": "2026-07-02T14:57:09.748150", "success": true, "latency_ms": 24.89, "error_message": null, "attempt_number": 1}
+{"device_id": "7d71475e", "timestamp": "2026-07-02T14:57:19.976185", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "3ee331e7", "timestamp": "2026-07-02T14:57:20.002932", "success": true, "latency_ms": 25.38, "error_message": null, "attempt_number": 1}
+{"device_id": "2f45f6d6", "timestamp": "2026-07-02T14:57:30.099514", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "aad8254b", "timestamp": "2026-07-02T14:57:37.608919", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "15b65571", "timestamp": "2026-07-02T14:57:45.118280", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "aa4367d7", "timestamp": "2026-07-02T14:57:52.626398", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "90f76713", "timestamp": "2026-07-02T14:57:53.628183", "success": true, "latency_ms": 0.35, "error_message": null, "attempt_number": 1}
+{"device_id": "cdcb60c1", "timestamp": "2026-07-02T14:57:53.660213", "success": true, "latency_ms": 31.1, "error_message": null, "attempt_number": 1}
+{"device_id": "7d71475e", "timestamp": "2026-07-02T14:58:01.165843", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "3ee331e7", "timestamp": "2026-07-02T14:58:04.048134", "success": true, "latency_ms": 32.6, "error_message": null, "attempt_number": 1}
+{"device_id": "2f45f6d6", "timestamp": "2026-07-02T14:58:12.558349", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "aad8254b", "timestamp": "2026-07-02T14:58:23.527431", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "15b65571", "timestamp": "2026-07-02T14:58:33.774540", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "aa4367d7", "timestamp": "2026-07-02T14:58:44.971243", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "90f76713", "timestamp": "2026-07-02T14:58:47.688866", "success": true, "latency_ms": 0.12, "error_message": null, "attempt_number": 1}
+{"device_id": "cdcb60c1", "timestamp": "2026-07-02T14:58:47.715071", "success": true, "latency_ms": 25.83, "error_message": null, "attempt_number": 1}
+{"device_id": "7d71475e", "timestamp": "2026-07-02T14:58:55.222300", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "3ee331e7", "timestamp": "2026-07-02T14:58:55.260041", "success": true, "latency_ms": 36.22, "error_message": null, "attempt_number": 1}
+{"device_id": "2f45f6d6", "timestamp": "2026-07-02T14:59:03.766348", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "aad8254b", "timestamp": "2026-07-02T14:59:12.276957", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "15b65571", "timestamp": "2026-07-02T14:59:20.786312", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "aa4367d7", "timestamp": "2026-07-02T14:59:29.296418", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "90f76713", "timestamp": "2026-07-02T14:59:29.298220", "success": true, "latency_ms": 0.47, "error_message": null, "attempt_number": 1}
+{"device_id": "cdcb60c1", "timestamp": "2026-07-02T14:59:29.335630", "success": true, "latency_ms": 36.46, "error_message": null, "attempt_number": 1}
+{"device_id": "7d71475e", "timestamp": "2026-07-02T14:59:37.843345", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "3ee331e7", "timestamp": "2026-07-02T14:59:37.881553", "success": true, "latency_ms": 36.99, "error_message": null, "attempt_number": 1}
+{"device_id": "66e4ca1a", "timestamp": "2026-07-15T13:09:40.096677", "success": true, "latency_ms": 0.14, "error_message": null, "attempt_number": 1}
+{"device_id": "d30874e3", "timestamp": "2026-07-15T13:09:47.779234", "success": true, "latency_ms": 26.23, "error_message": null, "attempt_number": 1}
+{"device_id": "bf2000db", "timestamp": "2026-07-15T13:09:59.155149", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "961ced58", "timestamp": "2026-07-15T13:09:59.216622", "success": true, "latency_ms": 60.97, "error_message": null, "attempt_number": 1}
+{"device_id": "e708d43f", "timestamp": "2026-07-15T13:10:10.787786", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "ce86f9d6", "timestamp": "2026-07-15T13:10:18.294080", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "71d784fc", "timestamp": "2026-07-15T13:10:25.800153", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "c8d6b984", "timestamp": "2026-07-15T13:10:33.306666", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "66e4ca1a", "timestamp": "2026-07-15T13:10:34.307287", "success": true, "latency_ms": 0.1, "error_message": null, "attempt_number": 1}
+{"device_id": "d30874e3", "timestamp": "2026-07-15T13:10:34.364159", "success": true, "latency_ms": 56.51, "error_message": null, "attempt_number": 1}
+{"device_id": "bf2000db", "timestamp": "2026-07-15T13:10:45.212556", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "961ced58", "timestamp": "2026-07-15T13:10:48.769096", "success": true, "latency_ms": 32.03, "error_message": null, "attempt_number": 1}
+{"device_id": "e708d43f", "timestamp": "2026-07-15T13:11:01.683108", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "ce86f9d6", "timestamp": "2026-07-15T13:11:13.701152", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "71d784fc", "timestamp": "2026-07-15T13:11:25.699087", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "c8d6b984", "timestamp": "2026-07-15T13:11:28.928927", "success": true, "latency_ms": 67.45, "error_message": null, "attempt_number": 1}
+{"device_id": "66e4ca1a", "timestamp": "2026-07-15T13:11:32.749626", "success": true, "latency_ms": 0.1, "error_message": null, "attempt_number": 1}
+{"device_id": "d30874e3", "timestamp": "2026-07-15T13:11:32.816704", "success": true, "latency_ms": 66.79, "error_message": null, "attempt_number": 1}
+{"device_id": "bf2000db", "timestamp": "2026-07-15T13:11:41.323087", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "961ced58", "timestamp": "2026-07-15T13:11:41.357110", "success": true, "latency_ms": 33.59, "error_message": null, "attempt_number": 1}
+{"device_id": "e708d43f", "timestamp": "2026-07-15T13:11:49.863113", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "ce86f9d6", "timestamp": "2026-07-15T13:11:58.369209", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "71d784fc", "timestamp": "2026-07-15T13:12:06.878555", "success": false, "latency_ms": null, "error_message": "No response within 2.0s", "attempt_number": 3}
+{"device_id": "c8d6b984", "timestamp": "2026-07-15T13:12:07.932384", "success": true, "latency_ms": 52.39, "error_message": null, "attempt_number": 1}
+{"device_id": "66e4ca1a", "timestamp": "2026-07-15T13:12:07.933157", "success": true, "latency_ms": 0.22, "error_message": null, "attempt_number": 1}
+{"device_id": "d30874e3", "timestamp": "2026-07-15T13:12:07.996328", "success": true, "latency_ms": 62.65, "error_message": null, "attempt_number": 1}

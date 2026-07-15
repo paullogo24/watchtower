@@ -1,6 +1,5 @@
-"""
-WatchTower Monitor Engine — Test Runner
-"""
+#WatchTower Monitor Engine — Test Runner
+
 import time
 import sys
 from datetime import datetime
@@ -11,6 +10,8 @@ sys.path.insert(0, ".")
 from watchtower.models import Device, MonitoringConfig, DeviceState
 from watchtower.monitor.engine import MonitorEngine
 from watchtower.storage.event_store import EventStore
+from watchtower.alerts.notifier import AlertNotifier
+from watchtower.config import Config
 
 
 def print_banner():
@@ -43,6 +44,17 @@ def on_check(result, device):
     print(f"  {status} {device.name:20s} | {latency:>8s} | attempt {result.attempt_number}/{3}")
 
 
+def on_alert(alert, change, device):
+    if alert.alert_type == "suppressed":
+        print(f"   📭 SUPPRESSED: {alert.message}")
+    elif alert.sent_successfully:
+        print(f"   📧 ALERT SENT: {alert.message}")
+    else:
+        print(f"   ⚠️  ALERT FAILED: {alert.message}")
+        if alert.error:
+            print(f"      Error: {alert.error}")
+
+
 def main():
     print_banner()
 
@@ -54,8 +66,13 @@ def main():
     engine.on_state_change(on_state_change)
     engine.on_check(on_check)
 
+    # Setup alerts
+    config = Config("config.yaml")
+    notifier = AlertNotifier(config=config, event_store=store)
+    notifier.on_alert(on_alert)
+    engine.on_state_change(lambda change, device: notifier.handle_state_change(change, device))
+
     # Add test devices
-    # NOTE: Replace these with IPs in your network, or use loopback for testing
     devices = [
         Device(
             name="Localhost",
@@ -73,37 +90,70 @@ def main():
         ),
         Device(
             name="Fake Device",
-            ip_address="192.0.2.1",  # non-routable IP address
+            ip_address="192.0.2.1",
             hostname="fake-device",
             device_type="server",
-            location="Nowhere"
+            location="N/A"
         ),
+        Device(
+            name="Cloudflare DNS",
+            ip_address="1.1.1.1",
+            hostname="cloudflare-dns",
+            device_type="server",
+            location="External"
+        ),
+        Device(
+            name="My Phone",
+            ip_address="172.27.108.211",
+            hostname="myphone",
+            device_type="personaldevice",
+            location="External"
+        ),
+        Device(
+            name="Caleb's Phone",
+            ip_address="10.25.107.222",
+            hostname="caleb",
+            device_type="personaldevice",
+            location="IC"
+        ),
+        Device(
+            name="Nkema's phone",
+            ip_address="10.235.194.217",
+            hostname="nkema",
+            device_type="personaldevice",
+            location="IC"
+        ),
+        Device(
+            name="Sessy's phone",
+            ip_address="192.168.1.125",
+            hostname="sessy",
+            device_type="personaldevice",
+            location="IC"
+        )
     ]
 
-    # Config: check every 10 seconds for demo (production: 60s)
-    config = MonitoringConfig(
-        ping_interval_sec=10,
+    # Config
+    monitor_config = MonitoringConfig(
+        ping_interval_sec=30,
         timeout_sec=2.0,
         retry_count=3,
-        latency_threshold_ms=50,  # Low threshold to easily trigger DEGRADED
+        latency_threshold_ms=50,
         consecutive_failures_before_alert=2,
         consecutive_successes_before_recovery=2
     )
 
     print("Registering devices...")
     for device in devices:
-        engine.add_device(device, config)
+        engine.add_device(device, monitor_config)
 
-    print(f"\nStarting monitor — will run for 60 seconds...")
+    print(f"\nStarting monitor — will run for 180 seconds...")
     print("-" * 60)
     engine.start()
 
     try:
-        # Run for 60 seconds
-        for i in range(60):
+        for i in range(180):
             time.sleep(1)
-            if i % 10 == 0 and i > 0:
-                # Print summary every 10 seconds
+            if i % 30 == 0 and i > 0:
                 print(f"\n--- Summary at {i}s ---")
                 for d in engine.get_all_devices():
                     state_emoji = {
@@ -117,7 +167,7 @@ def main():
                 print()
 
     except KeyboardInterrupt:
-        print("Interrupted by user.")
+        print("\n\nInterrupted by user.")
 
     engine.stop()
 
@@ -130,7 +180,7 @@ def main():
     print(f"Total state changes:    {events['state_changes']}")
     print(f"Total alerts logged:    {events['alerts']}")
 
-    print("Device final states:")
+    print("\nDevice final states:")
     for d in engine.get_all_devices():
         print(f"  {d.name}: {d.current_state.value} (uptime: {d.uptime_percentage:.1f}%)")
 
