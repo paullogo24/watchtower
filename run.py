@@ -12,6 +12,8 @@ from watchtower.monitor.engine import MonitorEngine
 from watchtower.storage.event_store import EventStore
 from watchtower.alerts.notifier import AlertNotifier
 from watchtower.config import Config
+from watchtower.alerts.batch_notifier import BatchAlertNotifier
+
 
 
 def print_banner():
@@ -44,7 +46,7 @@ def on_check(result, device):
     print(f"  {status} {device.name:20s} | {latency:>8s} | attempt {result.attempt_number}/{3}")
 
 
-def on_alert(alert, change, device):
+def on_alert(alert, *args):
     if alert.alert_type == "suppressed":
         print(f"   📭 SUPPRESSED: {alert.message}")
     elif alert.sent_successfully:
@@ -68,7 +70,7 @@ def main():
 
     # Setup alerts
     config = Config("config.yaml")
-    notifier = AlertNotifier(config=config, event_store=store)
+    notifier = BatchAlertNotifier(config=config, event_store=store, batch_window_sec=60)
     notifier.on_alert(on_alert)
     engine.on_state_change(lambda change, device: notifier.handle_state_change(change, device))
 
@@ -113,11 +115,11 @@ def main():
 
     # Config
     monitor_config = MonitoringConfig(
-        ping_interval_sec=30,
+        ping_interval_sec= 30,
         timeout_sec=2.0,
         retry_count=3,
         latency_threshold_ms=50,
-        consecutive_failures_before_alert=2,
+        consecutive_failures_before_alert=3,
         consecutive_successes_before_recovery=2
     )
 
@@ -148,6 +150,7 @@ def main():
     except KeyboardInterrupt:
         print("\n\nInterrupted by user.")
 
+    notifier.stop()
     engine.stop()
 
     # Print final stats
