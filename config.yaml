@@ -1,0 +1,39 @@
+# alert system
+
+monitoring:
+  default_interval_sec: 60
+  default_timeout_sec: 2.0
+  default_retry_count: 3
+  default_latency_threshold_ms: 100
+  default_failures_before_alert: 3
+  default_successes_before_recovery: 2
+
+database:
+  host: localhost
+  port: 3306
+  user: watchtower
+  password: ""
+  name: watchtower
+
+alerts:
+  deduplication_window_sec: 300  # 5 minutes — suppress duplicate alerts
+  email:
+    enabled: true                # ← SET TO true to enable emails
+    smtp_host: smtp.gmail.com    # ← Your SMTP server (gmail)
+    smtp_port: 587               # ← Usually 587 for TLS, 465 for SSL
+    username: ""  # ← Your email address
+    password: ""     # ← Your app password 
+    from_address: ""  # ← Sender address
+    to_addresses:
+      - ""   # ← Who gets the alerts
+      - "backup-admin@yourdomain.com"  # ← Can add more 
+    use_tls: true                # ← Usually true for port 587
+
+dashboard:
+  host: 0.0.0.0
+  port: 5000
+  debug: false
+
+storage:
+  data_dir: "data"
+  retention_days: 30
