@@ -1,0 +1,16 @@
+# WatchTower Core Dependencies
+ping3>=4.0.0
+schedule>=1.2.0
+
+# Dashboard (Phase 5)
+flask>=3.0.0
+jinja2>=3.1.0
+
+# Database (Phase 4)
+sqlalchemy>=2.0.0
+
+# Config & Utils
+pyyaml>=6.0
+
+# Optional: better logging
+loguru>=0.7.0
