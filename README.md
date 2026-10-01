@@ -10,14 +10,16 @@ A lightweight, Python-based system that monitors network devices, detects outage
 
 | Feature | Status |
 |---------|--------|
-| **Host Discovery** | ✅Register devices by IP or hostname |
-| **Network Scanning** | ✅Periodic ICMP ping checks with retry logic |
-| **Infrastructure Monitoring** | ✅Tracks device health in real-time (UP/DOWN/DEGRADED) |
+| **Host Discovery** | ✅ Devices registered via CLI, stored in SQLite |
+| **Network Scanning** | ✅ Periodic ICMP ping checks with retry logic |
+| **Infrastructure Monitoring** | ✅ Real-time device health tracking (UP/DOWN/DEGRADED) |
 | **Alert System** | ✅ Batched email alerts — one email with all changes |
 | **Event Logging** | ✅ Persisted to a queryable SQLite database |
-| **Historical Reporting** | ✅ Uptime %, outage history, latency trends, summary reports |
-| **State Machine** | Hysteresis prevents flapping (no false alarms) |
-| **Deduplication** | Suppresses duplicate alerts within 5-minute window |
+| **Historical Reporting** | ✅ Uptime %, outage history, latency trends |
+| **Device Management** | ✅ Add/update/deactivate/delete devices via CLI — no code edits needed |
+| **Data Retention** | ✅ Auto-purges records older than 30 days (daily job) |
+| **State Machine** | ✅ Hysteresis prevents flapping (no false alarms) |
+| **Deduplication** | ✅ Suppresses duplicate alerts within a 5-minute window |
 
 ---
 
@@ -31,7 +33,7 @@ pip install -r requirements.txt
 
 ### 2. Configure Alerts
 
-Edit `config.yaml`:
+Create your own local `config.yaml` (it's gitignored and not tracked in this repo):
 
 ```yaml
 alerts:
@@ -51,22 +53,14 @@ alerts:
 3. Security → **App passwords** → Select "Mail" + "Other (Custom name)"
 4. Type "WatchTower" → Generate → Copy the 16-character password
 
-> ⚠️ `config.yaml` contains live credentials and is gitignored. It is **not** tracked in this repo — create your own local copy before running.
-
 ### 3. Add Your Devices
 
-Edit `run.py`, replace test devices with your real IPs:
+Devices are no longer hardcoded — they're managed through `manage.py`, which stores them in the SQLite database:
 
-```python
-devices = [
-    Device(
-        name="Main Router",
-        ip_address="192.168.1.1",
-        hostname="router-main",
-        device_type="router",
-        location="Server Room"
-    ),
-]
+```bash
+python manage.py add --name "Main Router" --ip 192.168.1.1 --type router --location "Server Room"
+python manage.py add --name "Lab Switch" --ip 192.168.1.10 --type switch
+python manage.py list
 ```
 
 ### 4. Run
@@ -75,7 +69,7 @@ devices = [
 python run.py
 ```
 
-This creates `data/watchtower.db` automatically on first run and starts writing every check, state change, and alert to it in real time.
+On first run, this creates `data/watchtower.db` if it doesn't already exist, loads every active device from the registry, and starts monitoring.
 
 ---
 
@@ -91,9 +85,7 @@ A device is only marked DOWN — and only then does an alert fire — after `con
 
 ### Batched Alerts
 - State changes are collected over a `batch_window_sec` window (default 60s)
-- One email is sent containing:
-  - All devices that changed state (with old → new status)
-  - A full status table of **all** monitored devices
+- One email is sent containing all devices that changed state plus a full status table of every monitored device
 - No more spam — one email per minute max, regardless of how many devices fail
 
 ### State Machine
@@ -107,15 +99,45 @@ A device is only marked DOWN — and only then does an alert fire — after `con
 
 ---
 
+## 🧰 Managing Devices (`manage.py`)
+
+Devices live in the `devices` table of `data/watchtower.db` and are managed entirely through the CLI — no code edits required.
+
+```bash
+# Add a device
+python manage.py add --name "Main Router" --ip 192.168.1.1 --type router --location "Server Room"
+
+# List devices
+python manage.py list              # active only
+python manage.py list --all        # include deactivated
+
+# View full details
+python manage.py show <device_id>
+
+# Update a field
+python manage.py update <device_id> --location "Rack 3" --hostname router-main
+
+# Stop monitoring a device but keep its history (soft delete)
+python manage.py deactivate <device_id>
+python manage.py reactivate <device_id>
+
+# Permanently remove a device row
+python manage.py delete <device_id> [--yes]
+```
+
+Duplicate active IPs are rejected automatically. `run.py` loads whatever is currently active in the registry at startup — if none are registered, it prints a reminder to add one instead of crashing.
+
+---
+
 ## 🗄️ Database (SQLite)
 
-As of Phase 3, all monitoring data is persisted to `data/watchtower.db` via SQLAlchemy, replacing the earlier JSON-lines files.
+All monitoring data is persisted to `data/watchtower.db` via SQLAlchemy.
 
 **Tables:**
 
 | Table | Purpose |
 |-------|---------|
-| `devices` | Current state of every monitored device (synced on every check) |
+| `devices` | Registered devices + their current live state (synced every check) |
 | `checks` | Every individual ping result (timestamp, success, latency, errors) |
 | `state_changes` | Every UP/DOWN/DEGRADED transition |
 | `alerts` | Every alert sent, suppressed, or failed |
@@ -135,14 +157,20 @@ SELECT * FROM checks ORDER BY timestamp DESC LIMIT 10;
 from watchtower.storage.queries import Queries
 
 q = Queries("data/watchtower.db")
-q.device_uptime(device_id, hours=24)      # uptime %
-q.outage_history(hours=24)                # recent DOWN events
-q.latency_trend(device_id, hours=24)      # for graphing
-q.all_devices_status()                    # current status of every device
-q.summary_report(hours=24)                # totals + success rate
+q.device_uptime(device_id, hours=24)
+q.outage_history(hours=24)
+q.latency_trend(device_id, hours=24)
+q.all_devices_status()
+q.summary_report(hours=24)
 ```
 
-**Retention:** old records can be purged with `store.delete_old_events(days=30)` (uses `storage.retention_days` from `config.yaml`). Not yet wired into a scheduled job — currently a manual/future call.
+### Retention
+
+A daily job (scheduled for 02:00, riding on the same background scheduler used for ping checks) automatically purges `checks`, `state_changes`, and `alerts` older than `storage.retention_days` (default 30) from `config.yaml`. `devices` rows are never auto-deleted.
+
+> **Note:** this only runs while `run.py` is actively running at 02:00. If the process isn't alive at that moment, that day's cleanup is simply skipped — it is not "caught up" later, though the 30-day cutoff itself is always calculated relative to the moment cleanup actually runs, so nothing is lost or double-counted.
+
+**If you ever delete `data/watchtower.db`,** everything in it — devices, check history, state changes, alerts — is gone permanently, with no automatic backup. Copy the file manually (`cp data/watchtower.db data/watchtower.db.backup`) before doing anything risky.
 
 ---
 
@@ -150,7 +178,8 @@ q.summary_report(hours=24)                # totals + success rate
 
 ```
 watchtower/
-├── run.py                    ← Entry point (SQLite-backed)
+├── run.py                    ← Entry point (loads devices from DB)
+├── manage.py                 ← Device management CLI
 ├── run_phase3.py             ← Phase 3 SQLite demo/reference script
 ├── requirements.txt          ← Dependencies
 ├── config.yaml                ← Settings (gitignored, not tracked)
@@ -171,6 +200,7 @@ watchtower/
     ├── storage/
     │   ├── event_store.py      ← Legacy JSON-lines store (kept for reference)
     │   ├── sqlite_event_store.py  ← Active SQLite-backed event store
+    │   ├── device_registry.py  ← CRUD layer for the devices table
     │   └── queries.py          ← Historical queries: uptime, outages, trends, reports
     ├── alerts/
     │   ├── deduplicator.py     ← Prevents alert spam
@@ -220,7 +250,7 @@ database:
 alerts:
   deduplication_window_sec: 300  # 5 min — suppress duplicate alerts
   email:
-    enabled: false               # Set to true to enable
+    enabled: false
     smtp_host: smtp.gmail.com
     smtp_port: 587
     username: ""
@@ -248,7 +278,7 @@ storage:
 | **1** | Monitor Engine (ping + state machine) | ✅ Done |
 | **2** | Alert System (batched email) | ✅ Done |
 | **3** | Event Logger (SQLite migration) | ✅ Done |
-| **4** | Device Registry (CRUD + web management) | ⏳ Pending |
+| **4** | Device Registry (CRUD CLI + database) | ✅ Done |
 | **5** | Dashboard (Flask UI + REST API) | ⏳ Pending |
 | **6** | CLI + Packaging + Systemd | ⏳ Pending |
 
@@ -258,7 +288,7 @@ storage:
 
 - `config.yaml` holds live SMTP and database credentials and is **gitignored** — never commit it.
 - Gmail alerts use an **App Password**, not the account password.
-- Git history has been purged (`git filter-repo`) of an earlier accidental credential leak; the exposed app password has been revoked and rotated.
+- Git history has previously been purged (`git filter-repo`) of an accidental credential leak; the exposed app password was revoked and rotated.
 
 ---
 
