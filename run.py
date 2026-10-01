@@ -13,6 +13,7 @@ from watchtower.models import Device, MonitoringConfig, DeviceState
 from watchtower.monitor.engine import MonitorEngine
 from watchtower.storage.sqlite_event_store import SQLiteEventStore
 from watchtower.storage.queries import Queries
+from watchtower.storage.device_registry import DeviceRegistry
 from watchtower.alerts.notifier import AlertNotifier
 from watchtower.config import Config
 from watchtower.alerts.batch_notifier import BatchAlertNotifier
@@ -90,44 +91,15 @@ def main():
 
     schedule.every().day.at("02:00").do(cleanup_old_data)
 
-    # Add test devices
-    devices = [
-        Device(
-            name="Localhost",
-            ip_address="127.0.0.1",
-            hostname="localhost",
-            device_type="server",
-            location="Local"
-        ),
-        Device(
-            name="Google DNS",
-            ip_address="8.8.8.8",
-            hostname="dns.google",
-            device_type="server",
-            location="External"
-        ),
-        Device(
-            name="Fake Device",
-            ip_address="192.0.2.1",
-            hostname="fake-device",
-            device_type="server",
-            location="N/A"
-        ),
-        Device(
-            name="Cloudflare DNS",
-            ip_address="1.1.1.1",
-            hostname="cloudflare-dns",
-            device_type="server",
-            location="External"
-        ),
-        Device(
-            name="My Phone",
-            ip_address="172.27.108.211",
-            hostname="myphone",
-            device_type="personaldevice",
-            location="External"
-        )
-    ]
+    # Load devices from the registry (Phase 4) instead of a hardcoded list.
+    # Manage devices with: python manage.py add/list/update/deactivate/delete
+    registry = DeviceRegistry(db_path="data/watchtower.db")
+    devices = registry.list_devices(active_only=True)
+
+    if not devices:
+        print("No active devices registered. Add one first, e.g.:")
+        print('  python manage.py add --name "Main Router" --ip 192.168.1.1 --type router')
+        return
 
     # Config
     monitor_config = MonitoringConfig(
