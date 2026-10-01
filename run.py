@@ -7,35 +7,15 @@ from datetime import datetime
 # Add watchtower to path
 sys.path.insert(0, ".")
 
+import schedule
+
 from watchtower.models import Device, MonitoringConfig, DeviceState
 from watchtower.monitor.engine import MonitorEngine
-from watchtower.storage.event_store import EventStore
+from watchtower.storage.sqlite_event_store import SQLiteEventStore
+from watchtower.storage.queries import Queries
 from watchtower.alerts.notifier import AlertNotifier
 from watchtower.config import Config
 from watchtower.alerts.batch_notifier import BatchAlertNotifier
-from watchtower.storage.sqlite_event_store import SQLiteEventStore
-from watchtower.storage.queries import Queries
-
-
-def print_report(queries, devices):
-    """Print the current device status and the recent monitoring summary."""
-    print("\n" + "=" * 60)
-    print("MONITORING REPORT")
-    print("=" * 60)
-
-    for device in queries.all_devices_status():
-        print(
-            f"  {device['name']:25s} | {device['current_state']:10s} | "
-            f"{device['last_latency_ms'] or 'N/A'}ms"
-        )
-
-    summary = queries.summary_report(hours=24)
-    print("\nLast 24 hours:")
-    print(f"  Total checks:  {summary['total_checks']}")
-    print(f"  Failed checks: {summary['failed_checks']}")
-    print(f"  Success rate:  {summary['success_rate']}%")
-    print(f"  State changes: {summary['state_changes']}")
-    print(f"  Down events:   {summary['down_events']}")
 
 
 
@@ -83,20 +63,32 @@ def on_alert(alert, *args):
 def main():
     print_banner()
 
-    config = Config("config.yaml")
-
-    #User sqlite instead of json
+    # Create SQLite-backed event store + query helper
     store = SQLiteEventStore(db_path="data/watchtower.db")
     queries = Queries(db_path="data/watchtower.db")
 
+    # Create engine
     engine = MonitorEngine(event_store=store)
+    engine.on_state_change(on_state_change)
+    engine.on_check(on_check)
+    engine.on_check(lambda result, device: store.upsert_device(device))
 
     # Setup alerts
+    config = Config("config.yaml")
     notifier = BatchAlertNotifier(config=config, event_store=store, batch_window_sec=60)
     notifier.on_alert(on_alert)
     engine.on_state_change(lambda change, device: notifier.handle_state_change(change, device))
-    engine.on_check(on_check)
-    
+
+    # === RETENTION CLEANUP ===
+    # Runs once a day on the same background scheduler the engine already uses.
+    retention_days = config.get("storage", "retention_days", default=30)
+
+    def cleanup_old_data():
+        print(f"\n[Retention] Deleting events older than {retention_days} days...")
+        store.delete_old_events(days=retention_days)
+        print("[Retention] Cleanup complete.")
+
+    schedule.every().day.at("02:00").do(cleanup_old_data)
 
     # Add test devices
     devices = [
@@ -150,6 +142,7 @@ def main():
     print("Registering devices...")
     for device in devices:
         engine.add_device(device, monitor_config)
+        store.upsert_device(device)
 
     print(f"\nStarting monitor — will run for 180 seconds...")
     print("-" * 60)
@@ -177,24 +170,33 @@ def main():
     notifier.stop()
     engine.stop()
 
-    # update device states in DB
+    # Final device states saved to SQLite
     for d in engine.get_all_devices():
         store.upsert_device(d)
 
-    # print sqlite report
-    print_report(queries, devices)
-
-    # Event counts
+    # Print final stats
     print("\n" + "=" * 60)
-    print("DATABASE STATS")
+    print("FINAL REPORT")
     print("=" * 60)
     events = store.get_all_events()
-    print(f"Total checks:     {events['checks']}")
-    print(f"State changes:    {events['state_changes']}")
-    print(f"Alerts sent:      {events['alerts']}")
-    
+    print(f"Total checks logged:    {events['checks']}")
+    print(f"Total state changes:    {events['state_changes']}")
+    print(f"Total alerts logged:    {events['alerts']}")
+
+    print("\nDevice uptime (this run):")
+    for d in engine.get_all_devices():
+        uptime = queries.device_uptime(d.id, hours=1)
+        print(f"  {d.name:25s} | {d.current_state.value:10s} | {uptime:>6.1f}%")
+
+    print("\nRecent state changes:")
+    changes = store.get_recent_state_changes(limit=10)
+    for c in changes:
+        print(f"  [{c['timestamp']}] {c['device_id']}: {c['old_state']} → {c['new_state']} | {c['reason']}")
+
+    print(f"\nRetention: events older than {retention_days} days are purged daily at 02:00")
     print("\n✅ Monitor engine test complete!")
     print("Database file: data/watchtower.db")
+
 
 if __name__ == "__main__":
     main()
