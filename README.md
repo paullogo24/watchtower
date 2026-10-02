@@ -168,7 +168,7 @@ q.summary_report(hours=24)
 
 A daily job (scheduled for 02:00, riding on the same background scheduler used for ping checks) automatically purges `checks`, `state_changes`, and `alerts` older than `storage.retention_days` (default 30) from `config.yaml`. `devices` rows are never auto-deleted.
 
-> **Note:** this only runs while `run.py` is actively running at 02:00. If the process isn't alive at that moment, that day's cleanup is simply skipped — it is not "caught up" later, though the 30-day cutoff itself is always calculated relative to the moment cleanup actually runs, so nothing is lost or double-counted.
+> **Note:** this only runs while `run.py` is actively running at 02:00. If the process isn't alive at that moment, that day's cleanup is simply skipped — it is not "caught up" later, though the 35-day cutoff itself is always calculated relative to the moment cleanup actually runs, so nothing is lost or double-counted.
 
 **If you ever delete `data/watchtower.db`,** everything in it — devices, check history, state changes, alerts — is gone permanently, with no automatic backup. Copy the file manually (`cp data/watchtower.db data/watchtower.db.backup`) before doing anything risky.
 
@@ -266,7 +266,7 @@ dashboard:
 
 storage:
   data_dir: "data"
-  retention_days: 30
+  retention_days: 35
 ```
 
 ---
