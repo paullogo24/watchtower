@@ -36,4 +36,4 @@ dashboard:
 
 storage:
   data_dir: "data"
-  retention_days: 30
+  retention_days: 35
