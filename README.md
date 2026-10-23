@@ -4,6 +4,13 @@
 
 A lightweight, Python-based system that monitors network devices, detects outages, tracks latency, and sends batched email alerts — built for small-scale environments like university labs, regional telecom setups, and small IT teams.
 
+## Project reference vault
+
+Open the `vault` folder as a vault in Obsidian, then start with
+[Home](vault/Home.md). It contains linked architecture notes, device-management
+and history-cleanup instructions, database decisions, known issues, and a roadmap.
+For this installation, the vault is at `/home/plogodzo/WT/vault`.
+
 ---
 
 ## ✨ Features
@@ -183,6 +190,13 @@ python manage.py clear-history
 Stop monitoring before updating, deactivating, reactivating, or deleting devices,
 then restart it to load the changes. `run.py` loads whatever is currently active
 in the registry at startup — if none are registered, it prints a reminder to add one.
+
+Monitoring writes only status, last-check time, latency, and success/failure
+counters. It never overwrites device names, addresses, hostnames, types, locations,
+or active flags, and cannot recreate a deleted registration. Status writes are
+skipped if the device was deleted, deactivated, or its IP changed since loading.
+The running engine still needs a restart to refresh its targets and alert labels;
+until then, it can continue checking old targets and recording historical events.
 
 For the cleanup walkthrough, see
 [Clear scan history without removing devices](#clear-scan-history-without-removing-devices).

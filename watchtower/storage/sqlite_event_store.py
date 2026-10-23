@@ -68,36 +68,27 @@ class SQLiteEventStore:
         finally:
             session.close()
 
-    def upsert_device(self, device: Device):
-        # Insert or update device in database.  
-        session = self.db.get_session()
-        try:
-            db_device = session.query(DeviceDB).filter_by(id=device.id).first()
-            if db_device:
-                db_device.name = device.name
-                db_device.ip_address = device.ip_address
-                db_device.hostname = device.hostname
-                db_device.device_type = device.device_type
-                db_device.location = device.location
-                db_device.current_state = DeviceState(device.current_state.value)
-                db_device.last_latency_ms = device.last_latency_ms
-                db_device.last_check = device.last_check
-            else:
-                db_device = DeviceDB(
+    def update_device_status(self, device: Device) -> bool:
+        """Save monitoring fields without changing or creating registrations.
+
+        Skip deleted, inactive, or readdressed devices. The predicates and update
+        run in one statement so registry changes cannot race a separate lookup.
+        Return whether an eligible registration was updated.
+        """
+        with self.db.get_session() as session:
+            with session.begin():
+                updated = session.query(DeviceDB).filter_by(
                     id=device.id,
-                    name=device.name,
                     ip_address=device.ip_address,
-                    hostname=device.hostname,
-                    device_type=device.device_type,
-                    location=device.location,
-                    current_state=DeviceState(device.current_state.value),
-                    last_latency_ms=device.last_latency_ms,
-                    last_check=device.last_check
-                )
-                session.add(db_device)
-            session.commit()
-        finally:
-            session.close()
+                    is_active=True,
+                ).update({
+                    DeviceDB.current_state: DeviceState(device.current_state.value),
+                    DeviceDB.last_latency_ms: device.last_latency_ms,
+                    DeviceDB.last_check: device.last_check,
+                    DeviceDB.consecutive_failures: device.consecutive_failures,
+                    DeviceDB.consecutive_successes: device.consecutive_successes,
+                }, synchronize_session=False)
+            return updated > 0
 
     # === READ OPERATIONS ===
 

@@ -72,7 +72,7 @@ def main():
     engine = MonitorEngine(event_store=store)
     engine.on_state_change(on_state_change)
     engine.on_check(on_check)
-    engine.on_check(lambda result, device: store.upsert_device(device))
+    engine.on_check(lambda result, device: store.update_device_status(device))
 
     # Setup alerts
     config = Config("config.yaml")
@@ -114,7 +114,6 @@ def main():
     print("Registering devices...")
     for device in devices:
         engine.add_device(device, monitor_config)
-        store.upsert_device(device)
 
     print(f"\nStarting monitor — will run for 180 seconds...")
     print("-" * 60)
@@ -144,7 +143,7 @@ def main():
 
     # Final device states saved to SQLite
     for d in engine.get_all_devices():
-        store.upsert_device(d)
+        store.update_device_status(d)
 
     # Print final stats
     print("\n" + "=" * 60)
