@@ -6,6 +6,7 @@ import argparse
 sys.path.insert(0, ".")
 
 from watchtower.storage.device_registry import DeviceRegistry
+from watchtower.storage.sqlite_event_store import SQLiteEventStore
 
 
 def print_device_row(d):
@@ -110,6 +111,31 @@ def cmd_delete(args, registry):
         sys.exit(1)
 
 
+def cmd_clear_history(args, registry):
+    print("Stop run.py before clearing history to prevent new checks and stale status updates.")
+    if not args.yes:
+        try:
+            confirm = input(
+                "Permanently clear ALL checks, state changes, and alerts, and reset device status "
+                "to UNKNOWN? Registered devices will be kept. [y/N] "
+            )
+        except EOFError:
+            confirm = ""
+        if confirm.strip().lower() != "y":
+            print("Cancelled.")
+            return
+    store = SQLiteEventStore(db_path=args.db)
+    try:
+        counts = store.clear_history()
+    finally:
+        store.db.engine.dispose()
+    print(
+        f"Cleared {counts['checks']} checks, {counts['state_changes']} state changes, "
+        f"and {counts['alerts']} alerts."
+    )
+    print("Registered devices and active/inactive settings preserved. Device status reset to UNKNOWN.")
+
+
 def main():
     parser = argparse.ArgumentParser(description="WatchTower device management CLI")
     parser.add_argument("--db", default="data/watchtower.db", help="Path to the SQLite database (default: data/watchtower.db)")
@@ -152,6 +178,10 @@ def main():
     p_delete.add_argument("device_id")
     p_delete.add_argument("--yes", action="store_true", help="Skip confirmation prompt")
     p_delete.set_defaults(func=cmd_delete)
+
+    p_clear = sub.add_parser("clear-history", help="Clear scan and alert history while keeping registered devices")
+    p_clear.add_argument("--yes", action="store_true", help="Skip confirmation prompt")
+    p_clear.set_defaults(func=cmd_clear_history)
 
     args = parser.parse_args()
     registry = DeviceRegistry(db_path=args.db)

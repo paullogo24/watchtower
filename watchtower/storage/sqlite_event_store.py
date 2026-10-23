@@ -165,6 +165,28 @@ class SQLiteEventStore:
 
     # === CLEANUP ===
 
+    def clear_history(self) -> Dict[str, int]:
+        """Clear monitoring data and reset live status, preserving device registration.
+
+        Stop the monitor before calling this so it cannot write stale state back.
+        All changes commit together or roll back together.
+        """
+        with self.db.get_session() as session:
+            with session.begin():
+                counts = {
+                    "checks": session.query(CheckResultDB).delete(synchronize_session=False),
+                    "state_changes": session.query(StateChangeDB).delete(synchronize_session=False),
+                    "alerts": session.query(AlertLogDB).delete(synchronize_session=False),
+                }
+                session.query(DeviceDB).update({
+                    DeviceDB.current_state: DeviceState.unknown,
+                    DeviceDB.last_check: None,
+                    DeviceDB.last_latency_ms: None,
+                    DeviceDB.consecutive_failures: 0,
+                    DeviceDB.consecutive_successes: 0,
+                }, synchronize_session=False)
+            return counts
+
     def delete_old_events(self, days: int = 30):
         # Delete events older than N days.
         cutoff = datetime.utcnow() - timedelta(days=days)
