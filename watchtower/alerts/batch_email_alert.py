@@ -1,7 +1,6 @@
-"""
-Batch Email Alert — Sends a single email with all device status changes.
-Collects state changes over a window and sends one consolidated alert.
-"""
+# Batch Email Alert — Sends a single email with all device status changes.
+# Collects state changes over a window and sends one consolidated alert.
+
 import smtplib
 import ssl
 from email.mime.text import MIMEText

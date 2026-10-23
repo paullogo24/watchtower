@@ -63,6 +63,9 @@ python manage.py add --name "Lab Switch" --ip 192.168.1.10 --type switch
 python manage.py list
 ```
 
+Replace the example addresses with your devices' actual IP addresses. For the full
+walkthrough, see [Adding a new device](#adding-a-new-device).
+
 ### 4. Run
 
 ```bash
@@ -103,6 +106,55 @@ A device is only marked DOWN — and only then does an alert fire — after `con
 
 Devices live in the `devices` table of `data/watchtower.db` and are managed entirely through the CLI — no code edits required.
 
+### Adding a new device
+
+1. If monitoring is running, press **Ctrl+C** in its terminal and wait for it to
+   finish. Devices are loaded at startup, so newly added devices require a restart.
+
+2. Open a terminal in your WT project folder. For this local installation:
+
+   ```bash
+   cd /home/plogodzo/WT
+   ```
+
+3. Add the device using its actual name and IP address:
+
+   ```bash
+   python manage.py add --name "Main Router" --ip 192.168.1.1 --type router --location "Server Room"
+   ```
+
+   Only `--name` and `--ip` are required. Optional fields are `--type` (defaults
+   to `server`), `--location`, and `--hostname`. For example:
+
+   ```bash
+   python manage.py add --name "Lab PC" --ip 192.168.1.20
+   python manage.py add --name "Lab Switch" --ip 192.168.1.10 --type switch --hostname lab-switch
+   ```
+
+   Repeat the command for each device. Adding a device whose IP already belongs
+   to an active device is rejected. Each successful addition prints its device ID.
+
+4. Confirm that the device was saved:
+
+   ```bash
+   python manage.py list --all
+   ```
+
+   New devices are active and start with UNKNOWN status. To view one device's full
+   details, run `python manage.py show <device_id>`, replacing `<device_id>` with
+   the ID printed when adding or listing devices (omit the angle brackets).
+
+5. Start monitoring:
+
+   ```bash
+   python run.py
+   ```
+
+   The current runner monitors for 180 seconds, then prints its final report.
+   Registered devices remain saved between runs.
+
+### Device command reference
+
 ```bash
 # Add a device
 python manage.py add --name "Main Router" --ip 192.168.1.1 --type router --location "Server Room"
@@ -123,9 +175,17 @@ python manage.py reactivate <device_id>
 
 # Permanently remove a device row
 python manage.py delete <device_id> [--yes]
+
+# Clear scan and alert history while keeping registered devices (stop run.py first)
+python manage.py clear-history
 ```
 
-Duplicate active IPs are rejected automatically. `run.py` loads whatever is currently active in the registry at startup — if none are registered, it prints a reminder to add one instead of crashing.
+Stop monitoring before updating, deactivating, reactivating, or deleting devices,
+then restart it to load the changes. `run.py` loads whatever is currently active
+in the registry at startup — if none are registered, it prints a reminder to add one.
+
+For the cleanup walkthrough, see
+[Clear scan history without removing devices](#clear-scan-history-without-removing-devices).
 
 ---
 
@@ -163,6 +223,41 @@ q.latency_trend(device_id, hours=24)
 q.all_devices_status()
 q.summary_report(hours=24)
 ```
+
+### Clear scan history without removing devices
+
+1. Stop `run.py` first: press **Ctrl+C** in its terminal and wait for it to finish.
+
+2. Open a terminal in the project folder and run:
+
+   ```bash
+   cd /home/plogodzo/WT
+   python manage.py clear-history
+   ```
+
+3. Type **`y`** and press **Enter** to confirm. Pressing Enter without `y` cancels
+   the operation.
+
+4. Check that your devices remain, then restart monitoring:
+
+   ```bash
+   python manage.py list --all
+   python run.py
+   ```
+
+This permanently deletes all ping checks, state changes,
+and alert records. Device IDs, names, IP addresses, hostnames, types, locations,
+creation dates, and active/inactive settings are preserved. Saved monitoring status
+resets to UNKNOWN, with no last check or latency and zero success/failure counters.
+The deletions and status reset happen in a single transaction.
+
+To skip the confirmation, use `python manage.py clear-history --yes`.
+For a different database, put `--db` before the command:
+`python manage.py --db /path/to/watchtower.db clear-history`.
+
+Devices and history still share `data/watchtower.db`; use this command instead of
+deleting the database file. Running the monitor during cleanup can recreate scan
+records and restore old in-memory status.
 
 ### Retention
 
